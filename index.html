@@ -9,25 +9,23 @@
 body{
   margin:0;
   font-family:Arial;
-
   background:
     url('https://i.postimg.cc/HxqQT9qM/51918d4a-414e-4e49-b60e-6573301f0af5.jpg') top center no-repeat,
     linear-gradient(#020024,#090979,#000);
-
   background-size:100% auto, cover;
   padding-bottom:70px;
 }
 
-/* HEADER */
+/* 🔥 TOPBAR SULTAN */
 .topbar{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:10px 15px;
-  background:linear-gradient(to right,#000428,#004e92);
-  box-shadow:0 0 20px rgba(0,200,255,0.8);
+  padding:12px 20px;
+  background:linear-gradient(90deg,#020024,#090979,#00d4ff);
   position:relative;
   overflow:hidden;
+  box-shadow:0 0 25px rgba(0,200,255,0.8);
 }
 
 .topbar::before{
@@ -35,13 +33,13 @@ body{
   position:absolute;
   width:200%;
   height:100%;
-  background:linear-gradient(90deg,transparent,rgba(0,255,255,0.4),transparent);
-  animation:glowMove 4s linear infinite;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);
+  animation:shine 4s linear infinite;
 }
 
-@keyframes glowMove{
-  0%{ transform:translateX(-100%); }
-  100%{ transform:translateX(100%); }
+@keyframes shine{
+  0%{transform:translateX(-100%)}
+  100%{transform:translateX(100%)}
 }
 
 .logo{
@@ -51,37 +49,46 @@ body{
   z-index:2;
 }
 
-.logo img{ height:35px; }
-
-.logo-text{
-  color:#ffd700;
-  font-weight:bold;
-  font-size:14px;
-  text-shadow:0 0 5px #ffd700,0 0 10px #ffea00;
+.logo img{
+  height:38px;
+  filter:drop-shadow(0 0 10px #00eaff);
 }
 
+.logo-text{
+  font-weight:bold;
+  font-size:16px;
+  background:linear-gradient(45deg,#ffd700,#fff,#00eaff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* BUTTON */
 .btn-group{
   display:flex;
   gap:10px;
   z-index:2;
 }
 
-.btn-login,.btn-daftar{
-  padding:8px 16px;
-  border-radius:20px;
+.btn-login{
+  background:linear-gradient(45deg,#003cff,#00c3ff);
+  color:#fff;
+  padding:8px 18px;
+  border-radius:25px;
   font-size:12px;
   text-decoration:none;
   font-weight:bold;
-}
-
-.btn-login{
-  background:#003cff;
-  color:#ffd700;
+  box-shadow:0 0 10px #00c3ff;
 }
 
 .btn-daftar{
-  background:#ffd700;
+  background:linear-gradient(45deg,#ffd700,#ffae00);
   color:#000;
+  padding:8px 18px;
+  border-radius:25px;
+  font-size:12px;
+  text-decoration:none;
+  font-weight:bold;
+  box-shadow:0 0 10px #ffd700;
 }
 
 .header-line{
@@ -89,54 +96,56 @@ body{
   background:linear-gradient(to right,transparent,#00eaff,transparent);
 }
 
-/* SLIDER */
+/* BANNER */
 .banner img{
   width:100%;
   height:220px;
   object-fit:cover;
+  border-radius:10px;
 }
 
 /* GAME */
 .game-list{
-  max-width:1100px;
+  max-width:1200px;
   margin:20px auto;
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
-  gap:12px;
+  grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+  gap:15px;
   padding:10px;
 }
 
 .game{
-  background:rgba(0,0,0,0.7);
-  border-radius:12px;
+  background:rgba(0,0,0,0.75);
+  border-radius:14px;
   padding:8px;
   text-align:center;
   transition:0.3s;
 }
 
 .game:hover{
-  transform:translateY(-5px);
-  box-shadow:0 0 15px cyan;
+  transform:translateY(-6px) scale(1.03);
+  box-shadow:0 0 20px cyan;
 }
 
 .game img{
   width:100%;
-  border-radius:8px;
+  border-radius:10px;
 }
 
 .game-title{
-  font-size:12px;
+  font-size:13px;
   color:#fff;
 }
 
 .play-btn{
-  background:#003cff;
+  background:linear-gradient(45deg,#003cff,#00c3ff);
   color:#ffd700;
   border:none;
-  padding:6px;
+  padding:8px;
   width:100%;
-  border-radius:6px;
+  border-radius:8px;
   cursor:pointer;
+  font-weight:bold;
 }
 
 /* BOTTOM */
@@ -155,6 +164,18 @@ body{
   color:#ffd700;
   font-size:11px;
   text-decoration:none;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .game-list{ grid-template-columns:repeat(2,1fr); }
+  .banner img{ height:180px; }
+}
+
+/* DESKTOP */
+@media(min-width:1024px){
+  .game-list{ grid-template-columns:repeat(6,1fr); }
+  .banner img{ height:260px; }
 }
 </style>
 </head>
@@ -179,27 +200,38 @@ body{
   <img id="slider" src="https://king.cb88-rtpslot.com/banner/banner1.webp">
 </div>
 
-<!-- GAME -->
 <div class="game-list">
 
-  <!-- MAHJONG -->
   <div class="game">
     <img src="https://i.postimg.cc/vZ26qrvR/vswaysmahwblck.webp">
     <div class="game-title">Mahjong Wins 3</div>
     <button class="play-btn" onclick="openMahjong()">Main</button>
   </div>
 
-  <!-- SWEET BONANZA -->
   <div class="game">
-    <img src="https://dsuown9evwz4y.cloudfront.net/Images/providers/PP/vs20swbonsup.jpg?v=0">
+    <img src="https://dsuown9evwz4y.cloudfront.net/Images/providers/PP/vs20swbonsup.jpg">
     <div class="game-title">Sweet Bonanza Super Scatter</div>
     <button class="play-btn" onclick="openSweet()">Main</button>
   </div>
 
-  <!-- GAME LAIN -->
-  <div class="game"><img src="https://i.postimg.cc/sfBKKfFK/vs20olympgold.webp"><div class="game-title">Gates of Olympus Super Scatter</div><button class="play-btn">Main</button></div>
-  <div class="game"><img src="https://i.postimg.cc/DZGJJMDQ/vs20starprss.webp"><div class="game-title">Starlight Princess</div><button class="play-btn">Main</button></div>
-  <div class="game"><img src="https://i.postimg.cc/Jn37WVvS/vs20gatotx.webp"><div class="game-title">Gates of Gatot Kaca 1000</div><button class="play-btn">Main</button></div>
+  <div class="game">
+    <img src="https://i.postimg.cc/sfBKKfFK/vs20olympgold.webp">
+    <div class="game-title">Gates of Olympus Super Scatter</div>
+    <button class="play-btn" onclick="openGates()">Main</button>
+  </div>
+
+  <div class="game">
+    <img src="https://i.postimg.cc/DZGJJMDQ/vs20starprss.webp">
+    <div class="game-title">Starlight Princess</div>
+    <button class="play-btn" onclick="openStarlight()">Main</button>
+  </div>
+
+  <div class="game">
+    <img src="https://i.postimg.cc/Jn37WVvS/vs20gatotx.webp">
+    <div class="game-title">Gates of Gatot Kaca 1000</div>
+    <button class="play-btn" onclick="openGatot()">Main</button>
+  </div>
+
   <div class="game"><img src="https://i.postimg.cc/wM3f6k1c/zeus.webp"><div class="game-title">Zeus vs Hades</div><button class="play-btn">Main</button></div>
   <div class="game"><img src="https://i.postimg.cc/9X6ZLwYq/doghouse.webp"><div class="game-title">Dog House</div><button class="play-btn">Main</button></div>
   <div class="game"><img src="https://i.postimg.cc/X7pXz0Yc/bonanza.webp"><div class="game-title">Bonanza Gold</div><button class="play-btn">Main</button></div>
@@ -216,7 +248,6 @@ body{
 </div>
 
 <script>
-// SLIDER
 let images=[
 "https://king.cb88-rtpslot.com/banner/banner1.webp",
 "https://king.cb88-rtpslot.com/banner/banner2.webp",
@@ -231,16 +262,12 @@ setInterval(()=>{
   document.getElementById("slider").src=images[index];
 },3000);
 
-// MAHJONG
-function openMahjong(){
-  window.open("https://simulasikan.cfd/pragmatic-play/mahjong-wins-3","_blank");
-}
-
-// SWEET BONANZA
-function openSweet(){
-  window.open("https://simulasikan.cfd/pragmatic-play/sweet-bonanza-super-scatter","_blank");
-}
+function openMahjong(){window.open("https://simulasikan.cfd/pragmatic-play/mahjong-wins-3","_blank");}
+function openSweet(){window.open("https://simulasikan.cfd/pragmatic-play/sweet-bonanza-super-scatter","_blank");}
+function openGates(){window.open("https://simulasikan.cfd/pragmatic-play/gates-of-olympus-super-scatter","_blank");}
+function openStarlight(){window.open("https://nagaimam.xyz/pragmaticplay/starlightprincess","_blank");}
+function openGatot(){window.open("https://simulasikan.cfd/pragmatic-play/gates-of-gatotkaca-1000","_blank");}
 </script>
 
 </body>
-</html> 
+</html>
