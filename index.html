@@ -11,10 +11,9 @@ body{
   font-family:Arial;
   background:url('https://i.postimg.cc/HxqQT9qM/51918d4a-414e-4e49-b60e-6573301f0af5.jpg') no-repeat center center fixed;
   background-size:cover;
-  padding-bottom:70px;
 }
 
-/* TOPBAR */
+/* HEADER */
 .topbar{
   display:flex;
   justify-content:space-between;
@@ -32,9 +31,8 @@ body{
 .logo img{ height:38px; }
 
 .logo-text{
-  font-weight:bold;
-  font-size:16px;
   color:#ffd700;
+  font-weight:bold;
 }
 
 /* BUTTON */
@@ -52,7 +50,7 @@ body{
   text-decoration:none;
 }
 
-/* GAME GRID */
+/* GRID */
 .game-list{
   max-width:1200px;
   margin:20px auto;
@@ -62,54 +60,30 @@ body{
   padding:10px;
 }
 
-/* 🔥 CARD GAME ANIMASI */
 .game{
-  background:rgba(0,0,0,0.8);
+  background:rgba(0,0,0,0.85);
   border-radius:14px;
   padding:8px;
   text-align:center;
-  position:relative;
-  overflow:hidden;
   transition:0.3s;
 }
 
-/* glow border */
-.game::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:14px;
-  padding:2px;
-  background:linear-gradient(45deg,#00eaff,#00ffcc,#00eaff);
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite:xor;
-  mask-composite:exclude;
-  opacity:0;
-  transition:0.3s;
-}
-
-.game:hover::before{
-  opacity:1;
-}
-
+/* HOVER */
 .game:hover{
   transform:translateY(-8px) scale(1.05);
-  box-shadow:0 0 25px #00eaff;
+  box-shadow:
+    0 0 15px #00eaff,
+    0 0 30px #00eaff;
 }
 
-/* IMAGE */
 .game img{
   width:100%;
   border-radius:10px;
 }
 
-/* TITLE */
 .game-title{
-  font-size:13px;
   color:#fff;
-  margin-top:5px;
+  font-size:13px;
 }
 
 /* 🔥 BUTTON MAIN */
@@ -124,27 +98,49 @@ body{
   font-weight:bold;
   position:relative;
   overflow:hidden;
+  transition:0.1s;
 }
 
-/* efek klik */
+/* tekan */
 .play-btn:active{
-  transform:scale(0.95);
+  transform:scale(0.92);
 }
 
-/* flash klik */
+/* flash efek */
 .play-btn::after{
   content:"";
   position:absolute;
   width:100%;
   height:100%;
-  background:rgba(255,255,255,0.3);
+  background:rgba(255,255,255,0.4);
   top:0;
   left:-100%;
-  transition:0.3s;
 }
 
 .play-btn.clicked::after{
-  left:100%;
+  animation:flash 0.3s linear;
+}
+
+@keyframes flash{
+  0%{ left:-100%; }
+  100%{ left:100%; }
+}
+
+/* LOADING EFFECT */
+.loading{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.7);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
+  font-size:20px;
+  z-index:999;
+  display:none;
 }
 
 /* MOBILE */
@@ -168,14 +164,16 @@ body{
   </div>
 
   <div class="btn-group">
-    <a href="#" class="btn-login">MASUK</a>
-    <a href="#" class="btn-daftar">DAFTAR</a>
+    <a href="https://jadijuragandiclickbet88-03.xyz/register" class="btn-login">MASUK</a>
+    <a href="https://jadijuragandiclickbet88-03.xyz/register" class="btn-daftar">DAFTAR</a>
   </div>
 </div>
 
+<!-- LOADING -->
+<div class="loading" id="loading">LOADING...</div>
+
 <div class="game-list">
 
-  <!-- GAME -->
   <div class="game">
     <img src="https://i.postimg.cc/vZ26qrvR/vswaysmahwblck.webp">
     <div class="game-title">Mahjong Wins 3</div>
@@ -196,7 +194,7 @@ body{
 
   <div class="game">
     <img src="https://i.postimg.cc/DZGJJMDQ/vs20starprss.webp">
-    <div class="game-title">Starlight Princess</div>
+    <div class="game-title">Starlight Princess Super Scatter</div>
     <button class="play-btn" onclick="go(this,'https://nagaimam.xyz/pragmaticplay/starlightprincess')">Main</button>
   </div>
 
@@ -206,23 +204,19 @@ body{
     <button class="play-btn" onclick="go(this,'https://simulasikan.cfd/pragmatic-play/gates-of-gatotkaca-1000')">Main</button>
   </div>
 
-  <!-- TAMBAHAN -->
-  <div class="game"><img src="https://i.postimg.cc/wM3f6k1c/zeus.webp"><div class="game-title">Zeus vs Hades</div><button class="play-btn">Main</button></div>
-  <div class="game"><img src="https://i.postimg.cc/9X6ZLwYq/doghouse.webp"><div class="game-title">Dog House</div><button class="play-btn">Main</button></div>
-  <div class="game"><img src="https://i.postimg.cc/X7pXz0Yc/bonanza.webp"><div class="game-title">Bonanza Gold</div><button class="play-btn">Main</button></div>
-  <div class="game"><img src="https://i.postimg.cc/Nf0w1H6L/wildwest.webp"><div class="game-title">Wild West Gold</div><button class="play-btn">Main</button></div>
-  <div class="game"><img src="https://i.postimg.cc/KYt0hH8F/thor.webp"><div class="game-title">Power of Thor</div><button class="play-btn">Main</button></div>
-
 </div>
 
 <script>
 function go(btn,url){
   btn.classList.add("clicked");
 
+  document.getElementById("loading").style.display="flex";
+
   setTimeout(()=>{
     window.open(url,"_blank");
+    document.getElementById("loading").style.display="none";
     btn.classList.remove("clicked");
-  },300);
+  },400);
 }
 </script>
 
