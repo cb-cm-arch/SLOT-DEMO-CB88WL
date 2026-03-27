@@ -56,39 +56,36 @@ body{
   width:100%;
 }
 
-/* NOMINAL PUTIH BIRU */
+/* 🔥 NOMINAL FINAL RESPONSIVE */
 .jackpot-number{
   position:absolute;
   top:55%;
   left:60%;
   transform:translate(-50%,-50%);
-  font-size:3.2vw;
+
+  font-size:clamp(28px, 3.2vw, 60px); /* 🔥 FIX UTAMA */
   font-weight:bold;
   color:#ffffff;
+
   text-shadow:
     0 0 5px #00eaff,
     0 0 10px #00eaff,
     0 0 20px #00c3ff,
     0 0 40px #0099ff;
+
   animation: glowBlue 1.5s infinite alternate;
+}
+
+/* EXTRA BIAR DESKTOP LEBIH GEDE */
+@media(min-width:1200px){
+  .jackpot-number{
+    font-size:56px;
+  }
 }
 
 @keyframes glowBlue{
   from{ text-shadow:0 0 5px #00eaff; }
   to{ text-shadow:0 0 25px #00c3ff,0 0 40px #0099ff; }
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  .jackpot-number{
-    font-size:5vw;
-    left:59%;
-  }
-}
-@media(min-width:1400px){
-  .jackpot-number{
-    font-size:45px;
-  }
 }
 
 /* GAME GRID */
@@ -136,7 +133,7 @@ body{
   font-weight:bold;
 }
 
-/* GRID RESPONSIVE */
+/* RESPONSIVE GRID */
 @media(max-width:768px){
   .game-list{grid-template-columns:repeat(2,1fr);}
 }
@@ -169,83 +166,35 @@ body{
 <!-- JACKPOT -->
 <div class="jackpot-banner">
   <img src="https://imgcdn.it.com/l78hyjnu8bds1emf196e/ASET_CS_CLICKBET88/CB013.png">
-  <div class="jackpot-number" id="jackpot">6,095,672,938</div>
+  <div class="jackpot-number" id="jackpot">6,096,530,572</div>
 </div>
 
-<!-- GAME LIST -->
+<!-- GAME -->
 <div class="game-list">
 
-  <div class="game">
-    <img src="https://i.postimg.cc/vZ26qrvR/vswaysmahwblck.webp">
-    <div class="game-title">Mahjong Wins 3</div>
-    <button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/mahjong-wins-3')">Main</button>
-  </div>
+  <div class="game"><img src="https://i.postimg.cc/vZ26qrvR/vswaysmahwblck.webp"><div class="game-title">Mahjong Wins 3</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/mahjong-wins-3')">Main</button></div>
 
-  <div class="game">
-    <img src="https://dsuown9evwz4y.cloudfront.net/Images/providers/PP/vs20swbonsup.jpg">
-    <div class="game-title">Sweet Bonanza</div>
-    <button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/sweet-bonanza-super-scatter')">Main</button>
-  </div>
+  <div class="game"><img src="https://dsuown9evwz4y.cloudfront.net/Images/providers/PP/vs20swbonsup.jpg"><div class="game-title">Sweet Bonanza</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/sweet-bonanza-super-scatter')">Main</button></div>
 
-  <div class="game">
-    <img src="https://i.postimg.cc/sfBKKfFK/vs20olympgold.webp">
-    <div class="game-title">Gates of Olympus</div>
-    <button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/gates-of-olympus-super-scatter')">Main</button>
-  </div>
+  <div class="game"><img src="https://i.postimg.cc/sfBKKfFK/vs20olympgold.webp"><div class="game-title">Gates of Olympus</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/gates-of-olympus-super-scatter')">Main</button></div>
 
-  <div class="game">
-    <img src="https://i.postimg.cc/DZGJJMDQ/vs20starprss.webp">
-    <div class="game-title">Starlight Princess</div>
-    <button class="play-btn" onclick="go('https://nagaimam.xyz/pragmaticplay/starlightprincess')">Main</button>
-  </div>
+  <div class="game"><img src="https://i.postimg.cc/DZGJJMDQ/vs20starprss.webp"><div class="game-title">Starlight Princess</div><button class="play-btn" onclick="go('https://nagaimam.xyz/pragmaticplay/starlightprincess')">Main</button></div>
 
-  <div class="game">
-    <img src="https://i.postimg.cc/Jn37WVvS/vs20gatotx.webp">
-    <div class="game-title">Gatot Kaca 1000</div>
-    <button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/gates-of-gatotkaca-1000')">Main</button>
-  </div>
+  <div class="game"><img src="https://i.postimg.cc/Jn37WVvS/vs20gatotx.webp"><div class="game-title">Gatot Kaca 1000</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/gates-of-gatotkaca-1000')">Main</button></div>
 
-  <div class="game">
-    <img src="https://i.postimg.cc/Z5n3Z0rD/vs20doghouse.webp">
-    <div class="game-title">The Dog House</div>
-    <button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/the-dog-house')">Main</button>
-  </div>
+  <div class="game"><img src="https://i.postimg.cc/Z5n3Z0rD/vs20doghouse.webp"><div class="game-title">The Dog House</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/the-dog-house')">Main</button></div>
 
-  <div class="game">
-    <img src="https://i.postimg.cc/fyHkQW3T/vs20fruitparty.webp">
-    <div class="game-title">Fruit Party</div>
-    <button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/fruit-party')">Main</button>
-  </div>
+  <div class="game"><img src="https://i.postimg.cc/fyHkQW3T/vs20fruitparty.webp"><div class="game-title">Fruit Party</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/fruit-party')">Main</button></div>
 
-  <div class="game">
-    <img src="https://i.postimg.cc/VL5tY6sR/vs20bigbass.webp">
-    <div class="game-title">Big Bass Bonanza</div>
-    <button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/big-bass-bonanza')">Main</button>
-  </div>
+  <div class="game"><img src="https://i.postimg.cc/VL5tY6sR/vs20bigbass.webp"><div class="game-title">Big Bass Bonanza</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/big-bass-bonanza')">Main</button></div>
 
-  <div class="game">
-    <img src="https://i.postimg.cc/0y7Gz0JH/vs20wolfgold.webp">
-    <div class="game-title">Wolf Gold</div>
-    <button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/wolf-gold')">Main</button>
-  </div>
+  <div class="game"><img src="https://i.postimg.cc/0y7Gz0JH/vs20wolfgold.webp"><div class="game-title">Wolf Gold</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/wolf-gold')">Main</button></div>
 
-  <div class="game">
-    <img src="https://i.postimg.cc/rsz3pW7w/vs20aztecgems.webp">
-    <div class="game-title">Aztec Gems</div>
-    <button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/aztec-gems')">Main</button>
-  </div>
+  <div class="game"><img src="https://i.postimg.cc/rsz3pW7w/vs20aztecgems.webp"><div class="game-title">Aztec Gems</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/aztec-gems')">Main</button></div>
 
-  <div class="game">
-    <img src="https://i.postimg.cc/j2R7T2sX/vs20wildwest.webp">
-    <div class="game-title">Wild West Gold</div>
-    <button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/wild-west-gold')">Main</button>
-  </div>
+  <div class="game"><img src="https://i.postimg.cc/j2R7T2sX/vs20wildwest.webp"><div class="game-title">Wild West Gold</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/wild-west-gold')">Main</button></div>
 
-  <div class="game">
-    <img src="https://i.postimg.cc/mZzLrJmZ/vswayslions.webp">
-    <div class="game-title">5 Lions Megaways</div>
-    <button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/5-lions-megaways')">Main</button>
-  </div>
+  <div class="game"><img src="https://i.postimg.cc/mZzLrJmZ/vswayslions.webp"><div class="game-title">5 Lions Megaways</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/5-lions-megaways')">Main</button></div>
 
 </div>
 
