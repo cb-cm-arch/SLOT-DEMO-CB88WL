@@ -49,9 +49,13 @@ body{
   z-index:2;
 }
 
+/* 🔥 LOGO TANPA KOTAK */
 .logo img{
   height:38px;
-  filter:drop-shadow(0 0 10px #00eaff);
+  mix-blend-mode:screen;
+  filter:
+    drop-shadow(0 0 6px #00eaff)
+    drop-shadow(0 0 12px #00eaff);
 }
 
 .logo-text{
@@ -222,7 +226,7 @@ body{
 
   <div class="game">
     <img src="https://i.postimg.cc/DZGJJMDQ/vs20starprss.webp">
-    <div class="game-title">Starlight Princess Super Scatter</div>
+    <div class="game-title">Starlight Princess</div>
     <button class="play-btn" onclick="openStarlight()">Main</button>
   </div>
 
