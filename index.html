@@ -18,94 +18,77 @@ body{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:10px 12px;
+  padding:12px 20px;
   background:linear-gradient(90deg,#020024,#090979,#00d4ff);
-  flex-wrap:wrap;
 }
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
+.logo{display:flex;align-items:center;gap:10px;}
+.logo img{height:38px;}
+.logo-text{color:#ffd700;font-weight:bold;}
 
-.logo img{height:32px;}
-
-.logo-text{
-  color:#ffd700;
-  font-weight:bold;
-  font-size:14px;
-}
-
-.btn-group{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-}
-
+.btn-group{display:flex;gap:10px;}
 .btn-login,.btn-daftar{
   background:#ffd700;
   color:#000;
-  padding:6px 14px;
-  border-radius:20px;
+  padding:8px 18px;
+  border-radius:25px;
   font-weight:bold;
   text-decoration:none;
-  font-size:13px;
-}
-
-/* 🔥 MOBILE FIX */
-@media(max-width:480px){
-
-  .topbar{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:8px;
-  }
-
-  .logo{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .logo-text{
-    margin-top:4px;
-    font-size:13px;
-  }
-
-  .btn-group{
-    width:100%;
-    justify-content:flex-end;
-  }
 }
 
 /* SLIDER */
-.banner{max-width:1200px;margin:10px auto;}
-.banner img{width:100%;border-radius:12px;}
+.banner{
+  max-width:1200px;
+  margin:10px auto;
+}
+.banner img{
+  width:100%;
+  border-radius:12px;
+}
 
 /* JACKPOT */
-.jackpot-banner{max-width:1200px;margin:10px auto;position:relative;}
-.jackpot-banner img{width:100%;}
+.jackpot-banner{
+  max-width:1200px;
+  margin:10px auto;
+  position:relative;
+}
+.jackpot-banner img{
+  width:100%;
+}
 
+/* 🔥 NOMINAL FINAL RESPONSIVE */
 .jackpot-number{
   position:absolute;
   top:55%;
   left:60%;
   transform:translate(-50%,-50%);
-  font-size:clamp(28px, 3.2vw, 60px);
+
+  font-size:clamp(28px, 3.2vw, 60px); /* 🔥 FIX UTAMA */
   font-weight:bold;
-  color:#fff;
+  color:#ffffff;
+
   text-shadow:
     0 0 5px #00eaff,
     0 0 10px #00eaff,
     0 0 20px #00c3ff,
     0 0 40px #0099ff;
+
+  animation: glowBlue 1.5s infinite alternate;
 }
 
+/* EXTRA BIAR DESKTOP LEBIH GEDE */
 @media(min-width:1200px){
-  .jackpot-number{font-size:56px;}
+  .jackpot-number{
+    font-size:56px;
+  }
 }
 
-/* GAME */
+@keyframes glowBlue{
+  from{ text-shadow:0 0 5px #00eaff; }
+  to{ text-shadow:0 0 25px #00c3ff,0 0 40px #0099ff; }
+}
+
+/* GAME GRID */
 .game-list{
   max-width:1200px;
   margin:20px auto;
@@ -128,9 +111,17 @@ body{
   box-shadow:0 0 15px #00eaff,0 0 30px #00eaff;
 }
 
-.game img{width:100%;border-radius:10px;}
-.game-title{color:#fff;font-size:13px;}
+.game img{
+  width:100%;
+  border-radius:10px;
+}
 
+.game-title{
+  color:#fff;
+  font-size:13px;
+}
+
+/* BUTTON */
 .play-btn{
   background:linear-gradient(45deg,#003cff,#00c3ff);
   color:#ffd700;
@@ -142,7 +133,7 @@ body{
   font-weight:bold;
 }
 
-/* GRID */
+/* RESPONSIVE GRID */
 @media(max-width:768px){
   .game-list{grid-template-columns:repeat(2,1fr);}
 }
@@ -178,7 +169,7 @@ body{
   <div class="jackpot-number" id="jackpot">6,096,530,572</div>
 </div>
 
-<!-- GAME FULL -->
+<!-- GAME -->
 <div class="game-list">
 
   <div class="game"><img src="https://i.postimg.cc/vZ26qrvR/vswaysmahwblck.webp"><div class="game-title">Mahjong Wins 3</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/mahjong-wins-3')">Main</button></div>
@@ -187,15 +178,32 @@ body{
 
   <div class="game"><img src="https://i.postimg.cc/sfBKKfFK/vs20olympgold.webp"><div class="game-title">Gates of Olympus</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/gates-of-olympus-super-scatter')">Main</button></div>
 
-  <div class="game"><img src="https://i.postimg.cc/DZGJJMDQ/vs20starprss.webp"><div class="game-title">Starlight Princess Super Scatter</div><button class="play-btn" onclick="go('https://nagaimam.xyz/pragmaticplay/starlightprincess')">Main</button></div>
+  <div class="game"><img src="https://i.postimg.cc/DZGJJMDQ/vs20starprss.webp"><div class="game-title">Starlight Princess</div><button class="play-btn" onclick="go('https://nagaimam.xyz/pragmaticplay/starlightprincess')">Main</button></div>
 
   <div class="game"><img src="https://i.postimg.cc/Jn37WVvS/vs20gatotx.webp"><div class="game-title">Gatot Kaca 1000</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/gates-of-gatotkaca-1000')">Main</button></div>
+
+  <div class="game"><img src="https://i.postimg.cc/Z5n3Z0rD/vs20doghouse.webp"><div class="game-title">The Dog House</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/the-dog-house')">Main</button></div>
+
+  <div class="game"><img src="https://i.postimg.cc/fyHkQW3T/vs20fruitparty.webp"><div class="game-title">Fruit Party</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/fruit-party')">Main</button></div>
+
+  <div class="game"><img src="https://i.postimg.cc/VL5tY6sR/vs20bigbass.webp"><div class="game-title">Big Bass Bonanza</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/big-bass-bonanza')">Main</button></div>
+
+  <div class="game"><img src="https://i.postimg.cc/0y7Gz0JH/vs20wolfgold.webp"><div class="game-title">Wolf Gold</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/wolf-gold')">Main</button></div>
+
+  <div class="game"><img src="https://i.postimg.cc/rsz3pW7w/vs20aztecgems.webp"><div class="game-title">Aztec Gems</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/aztec-gems')">Main</button></div>
+
+  <div class="game"><img src="https://i.postimg.cc/j2R7T2sX/vs20wildwest.webp"><div class="game-title">Wild West Gold</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/wild-west-gold')">Main</button></div>
+
+  <div class="game"><img src="https://i.postimg.cc/mZzLrJmZ/vswayslions.webp"><div class="game-title">5 Lions Megaways</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/5-lions-megaways')">Main</button></div>
 
 </div>
 
 <script>
-function go(url){ window.open(url,"_blank"); }
+function go(url){
+  window.open(url,"_blank");
+}
 
+/* SLIDER */
 let banners=[
 "https://king.cb88-rtpslot.com/banner/banner1.webp",
 "https://king.cb88-rtpslot.com/banner/banner2.webp",
@@ -210,11 +218,12 @@ setInterval(()=>{
   document.getElementById("slider").src=banners[i];
 },3000);
 
+/* JACKPOT GERAK */
 let el=document.getElementById("jackpot");
-let value=6096530572;
 setInterval(()=>{
-  value+=Math.floor(Math.random()*3000);
-  el.innerText=value.toLocaleString('id-ID');
+  let val=parseInt(el.innerText.replace(/,/g,''));
+  val+=Math.floor(Math.random()*2000);
+  el.innerText=val.toLocaleString();
 },1500);
 </script>
 
