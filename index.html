@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CB88 DEMO</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+
+  background:
+    url('https://i.postimg.cc/HxqQT9qM/51918d4a-414e-4e49-b60e-6573301f0af5.jpg') top center no-repeat,
+    linear-gradient(#020024,#090979,#000);
+
+  background-size:100% auto, cover;
+  padding-bottom:70px;
+}
+
+/* HEADER */
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 15px;
+  background:linear-gradient(to right,#000428,#004e92);
+  box-shadow:0 0 20px rgba(0,200,255,0.8);
+  position:relative;
+  overflow:hidden;
+}
+
+.topbar::before{
+  content:"";
+  position:absolute;
+  width:200%;
+  height:100%;
+  background:linear-gradient(90deg,transparent,rgba(0,255,255,0.4),transparent);
+  animation:glowMove 4s linear infinite;
+}
+
+@keyframes glowMove{
+  0%{ transform:translateX(-100%); }
+  100%{ transform:translateX(100%); }
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  z-index:2;
+}
+
+.logo img{ height:35px; }
+
+.logo-text{
+  color:#ffd700;
+  font-weight:bold;
+  font-size:14px;
+  text-shadow:0 0 5px #ffd700,0 0 10px #ffea00;
+}
+
+.btn-group{
+  display:flex;
+  gap:10px;
+  z-index:2;
+}
+
+.btn-login,.btn-daftar{
+  padding:8px 16px;
+  border-radius:20px;
+  font-size:12px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.btn-login{
+  background:#003cff;
+  color:#ffd700;
+}
+
+.btn-daftar{
+  background:#ffd700;
+  color:#000;
+}
+
+.header-line{
+  height:4px;
+  background:linear-gradient(to right,transparent,#00eaff,transparent);
+}
+
+/* SLIDER */
+.banner img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+/* GAME */
+.game-list{
+  max-width:1100px;
+  margin:20px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
+  gap:12px;
+  padding:10px;
+}
+
+.game{
+  background:rgba(0,0,0,0.7);
+  border-radius:12px;
+  padding:8px;
+  text-align:center;
+  transition:0.3s;
+}
+
+.game:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 15px cyan;
+}
+
+.game img{
+  width:100%;
+  border-radius:8px;
+}
+
+.game-title{
+  font-size:12px;
+  color:#fff;
+}
+
+.play-btn{
+  background:#003cff;
+  color:#ffd700;
+  border:none;
+  padding:6px;
+  width:100%;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* BOTTOM */
+.bottom-nav{
+  position:fixed;
+  bottom:0;
+  width:100%;
+  height:60px;
+  background:#111a4d;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+}
+
+.bottom-nav a{
+  color:#ffd700;
+  font-size:11px;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <div class="logo">
+    <img src="https://cb88fulljpterus.com/storage/webpersonalize/7f9c6642-389e-4312-981d-de077aee6551.gif">
+    <div class="logo-text">CB88 DEMO</div>
+  </div>
+
+  <div class="btn-group">
+    <a href="https://cb88fulljpterus.com/register" class="btn-login">MASUK</a>
+    <a href="https://cb88fulljpterus.com/register" class="btn-daftar">DAFTAR</a>
+  </div>
+</div>
+
+<div class="header-line"></div>
+
+<div class="banner">
+  <img id="slider" src="https://king.cb88-rtpslot.com/banner/banner1.webp">
+</div>
+
+<!-- GAME -->
+<div class="game-list">
+
+  <!-- MAHJONG -->
+  <div class="game">
+    <img src="https://i.postimg.cc/vZ26qrvR/vswaysmahwblck.webp">
+    <div class="game-title">Mahjong Wins 3</div>
+    <button class="play-btn" onclick="openMahjong()">Main</button>
+  </div>
+
+  <!-- SWEET BONANZA -->
+  <div class="game">
+    <img src="https://dsuown9evwz4y.cloudfront.net/Images/providers/PP/vs20swbonsup.jpg?v=0">
+    <div class="game-title">Sweet Bonanza Super Scatter</div>
+    <button class="play-btn" onclick="openSweet()">Main</button>
+  </div>
+
+  <!-- GAME LAIN -->
+  <div class="game"><img src="https://i.postimg.cc/sfBKKfFK/vs20olympgold.webp"><div class="game-title">Gates of Olympus Super Scatter</div><button class="play-btn">Main</button></div>
+  <div class="game"><img src="https://i.postimg.cc/DZGJJMDQ/vs20starprss.webp"><div class="game-title">Starlight Princess</div><button class="play-btn">Main</button></div>
+  <div class="game"><img src="https://i.postimg.cc/Jn37WVvS/vs20gatotx.webp"><div class="game-title">Gates of Gatot Kaca 1000</div><button class="play-btn">Main</button></div>
+  <div class="game"><img src="https://i.postimg.cc/wM3f6k1c/zeus.webp"><div class="game-title">Zeus vs Hades</div><button class="play-btn">Main</button></div>
+  <div class="game"><img src="https://i.postimg.cc/9X6ZLwYq/doghouse.webp"><div class="game-title">Dog House</div><button class="play-btn">Main</button></div>
+  <div class="game"><img src="https://i.postimg.cc/X7pXz0Yc/bonanza.webp"><div class="game-title">Bonanza Gold</div><button class="play-btn">Main</button></div>
+  <div class="game"><img src="https://i.postimg.cc/Nf0w1H6L/wildwest.webp"><div class="game-title">Wild West Gold</div><button class="play-btn">Main</button></div>
+  <div class="game"><img src="https://i.postimg.cc/KYt0hH8F/thor.webp"><div class="game-title">Power of Thor</div><button class="play-btn">Main</button></div>
+
+</div>
+
+<div class="bottom-nav">
+  <a href="#">🏠<br>Beranda</a>
+  <a href="#">💰<br>Deposit</a>
+  <a href="#">🎁<br>Promo</a>
+  <a href="#">💬<br>Chat</a>
+</div>
+
+<script>
+// SLIDER
+let images=[
+"https://king.cb88-rtpslot.com/banner/banner1.webp",
+"https://king.cb88-rtpslot.com/banner/banner2.webp",
+"https://king.cb88-rtpslot.com/banner/banner3.webp",
+"https://king.cb88-rtpslot.com/banner/banner4.webp",
+"https://king.cb88-rtpslot.com/banner/banner5.webp"
+];
+
+let index=0;
+setInterval(()=>{
+  index=(index+1)%images.length;
+  document.getElementById("slider").src=images[index];
+},3000);
+
+// MAHJONG
+function openMahjong(){
+  window.open("https://simulasikan.cfd/pragmatic-play/mahjong-wins-3","_blank");
+}
+
+// SWEET BONANZA
+function openSweet(){
+  window.open("https://simulasikan.cfd/pragmatic-play/sweet-bonanza-super-scatter","_blank");
+}
+</script>
+
+</body>
+</html> 
