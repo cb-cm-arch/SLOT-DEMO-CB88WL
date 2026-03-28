@@ -46,6 +46,32 @@ body{
   font-size:14px;
 }
 
+/* PROVIDER MENU (SEMUA DEVICE) */
+.provider-menu{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:15px;
+  padding:12px;
+}
+
+.provider-item{
+  background:#0a2a66;
+  padding:12px 18px;
+  border-radius:12px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.provider-item img{
+  height:35px;
+}
+
+.provider-item:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 15px #00c3ff;
+}
+
 /* SLIDER */
 .banner{
   max-width:1200px;
@@ -55,34 +81,6 @@ body{
 .banner img{
   width:100%;
   border-radius:12px;
-}
-
-/* MOBILE MENU */
-.mobile-menu{display:none;}
-
-@media(max-width:480px){
-  .mobile-menu{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:12px;
-    padding:10px;
-  }
-
-  .menu-item{
-    background:#001f5c;
-    color:#fff;
-    text-align:center;
-    padding:10px;
-    border-radius:10px;
-    font-size:12px;
-  }
-
-  .menu-item span{
-    display:block;
-    font-size:11px;
-    margin-top:5px;
-  }
 }
 
 /* JACKPOT */
@@ -105,21 +103,7 @@ body{
   font-size:clamp(20px,4vw,60px);
   font-weight:bold;
   color:#fff;
-  text-align:center;
   white-space: nowrap;
-
-  text-shadow:
-    0 0 5px #00eaff,
-    0 0 10px #00eaff,
-    0 0 20px #00c3ff,
-    0 0 40px #0099ff;
-
-  animation: glowBlue 1.5s infinite alternate;
-}
-
-@keyframes glowBlue{
-  from{ text-shadow:0 0 5px #00eaff; }
-  to{ text-shadow:0 0 25px #00c3ff,0 0 40px #0099ff; }
 }
 
 /* GAME GRID */
@@ -137,25 +121,6 @@ body{
   border-radius:14px;
   padding:8px;
   text-align:center;
-  position:relative;
-  overflow:hidden;
-
-  box-shadow:
-    0 0 5px #00eaff,
-    0 0 10px #00eaff,
-    0 0 20px #00c3ff;
-
-  animation:glowPulse 2.5s infinite;
-}
-
-@keyframes glowPulse{
-  0%{box-shadow:0 0 5px #00eaff,0 0 10px #00eaff;}
-  50%{box-shadow:0 0 20px #00eaff,0 0 40px #00c3ff;}
-  100%{box-shadow:0 0 5px #00eaff,0 0 10px #00eaff;}
-}
-
-.game:hover{
-  transform:translateY(-10px) scale(1.08);
 }
 
 .game img{
@@ -186,8 +151,29 @@ body{
   .jackpot-number{left:59%;}
 }
 
-/* BOTTOM NAV */
-.bottom-nav{display:none;}
+/* POPUP */
+.popup{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.8);
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.popup-content{
+  background:#0a1f44;
+  color:#fff;
+  padding:25px;
+  border-radius:12px;
+  font-size:18px;
+  text-align:center;
+  box-shadow:0 0 20px #00eaff;
+}
 </style>
 </head>
 
@@ -204,12 +190,13 @@ body{
   </div>
 </div>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu">
-  <div class="menu-item" onclick="comingSoon()">
+<!-- PROVIDER MENU -->
+<div class="provider-menu">
+  <div class="provider-item" onclick="comingSoon()">
     <img src="https://cb88fulljpterus.com/asset/gameprovider/logo/pgsoft.png">
   </div>
-  <div class="menu-item">
+
+  <div class="provider-item">
     <img src="https://cb88fulljpterus.com/asset/gameprovider/logo/pragmaticplay.png">
   </div>
 </div>
@@ -250,9 +237,9 @@ body{
   <div class="game"><img src="https://i.postimg.cc/y8Z647n8/vs20sugarrushx(1).webp"><div class="game-title">Sugar Rush 1000</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/sugar-rush-1000')">Coba Main Demo</button></div>
 
 </div>
-<!-- POPUP -->
-<div id="popup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;z-index:9999;">
-  <div style="background:#0a1f44;color:#fff;padding:25px;border-radius:12px;font-size:18px;text-align:center;box-shadow:0 0 20px #00eaff;">
+
+<div id="popup" class="popup">
+  <div class="popup-content">
     🚧 GAMES AKAN SEGERA HADIR 🔥
   </div>
 </div>
