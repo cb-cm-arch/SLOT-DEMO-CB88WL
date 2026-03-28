@@ -6,6 +6,8 @@
 <title>CB88 DEMO</title>
 
 <style>
+*{box-sizing:border-box;}
+
 body{
   margin:0;
   font-family:Arial;
@@ -18,28 +20,36 @@ body{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:12px 20px;
+  padding:10px 15px;
   background:linear-gradient(90deg,#020024,#090979,#00d4ff);
+  flex-wrap:wrap;
 }
 
-.logo{display:flex;align-items:center;gap:10px;}
-.logo img{height:38px;}
-.logo-text{display:none;} /* 🔥 HAPUS CB88 DEMO */
+.logo img{
+  height:34px;
+}
 
-.btn-group{display:flex;gap:10px;}
+.btn-group{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
 .btn-login,.btn-daftar{
   background:#ffd700;
   color:#000;
-  padding:8px 18px;
-  border-radius:25px;
+  padding:7px 14px;
+  border-radius:20px;
   font-weight:bold;
   text-decoration:none;
+  font-size:14px;
 }
 
 /* SLIDER */
 .banner{
   max-width:1200px;
   margin:10px auto;
+  padding:0 10px;
 }
 .banner img{
   width:100%;
@@ -51,9 +61,11 @@ body{
   max-width:1200px;
   margin:10px auto;
   position:relative;
+  padding:0 10px;
 }
 .jackpot-banner img{
   width:100%;
+  border-radius:12px;
 }
 
 .jackpot-number{
@@ -61,9 +73,10 @@ body{
   top:55%;
   left:60%;
   transform:translate(-50%,-50%);
-  font-size:clamp(28px, 3.2vw, 60px);
+  font-size:clamp(20px,4vw,60px);
   font-weight:bold;
   color:#ffffff;
+  text-align:center;
 
   text-shadow:
     0 0 5px #00eaff,
@@ -82,10 +95,10 @@ body{
 /* GAME GRID */
 .game-list{
   max-width:1200px;
-  margin:20px auto;
+  margin:15px auto;
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
-  gap:15px;
+  grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
+  gap:12px;
   padding:10px;
 }
 
@@ -98,7 +111,7 @@ body{
 }
 
 .game:hover{
-  transform:translateY(-8px) scale(1.05);
+  transform:translateY(-6px) scale(1.03);
   box-shadow:0 0 15px #00eaff,0 0 30px #00eaff;
 }
 
@@ -109,27 +122,53 @@ body{
 
 .game-title{
   color:#fff;
-  font-size:13px;
+  font-size:12px;
+  margin:6px 0;
+  min-height:32px;
 }
 
-/* 🔥 BUTTON FIX */
+/* BUTTON */
 .play-btn{
   background:linear-gradient(45deg,#003cff,#00c3ff);
-  color:#000; /* 🔥 TEXT HITAM */
+  color:#000;
   border:none;
-  padding:8px;
+  padding:10px;
   width:100%;
   border-radius:8px;
   cursor:pointer;
   font-weight:bold;
+  font-size:13px;
 }
 
-/* GRID */
-@media(max-width:768px){
-  .game-list{grid-template-columns:repeat(2,1fr);}
+/* MOBILE */
+@media(max-width:480px){
+  .topbar{
+    flex-direction:column;
+    gap:8px;
+  }
+
+  .game-list{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .jackpot-number{
+    left:50%;
+    top:55%;
+  }
 }
+
+/* TABLET */
+@media(min-width:768px){
+  .game-list{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+/* DESKTOP */
 @media(min-width:1024px){
-  .game-list{grid-template-columns:repeat(6,1fr);}
+  .game-list{
+    grid-template-columns:repeat(6,1fr);
+  }
 }
 </style>
 </head>
@@ -158,6 +197,8 @@ body{
 
 <div class="game-list">
 
+  <!-- SEMUA GAME TETAP SAMA -->
+  
   <div class="game"><img src="https://i.postimg.cc/vZ26qrvR/vswaysmahwblck.webp"><div class="game-title">Mahjong Wins 3</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/mahjong-wins-3')">Coba Main Demo</button></div>
 
   <div class="game"><img src="https://dsuown9evwz4y.cloudfront.net/Images/providers/PP/vs20swbonsup.jpg"><div class="game-title">Sweet Bonanza Super Scatter</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/sweet-bonanza-super-scatter')">Coba Main Demo</button></div>
