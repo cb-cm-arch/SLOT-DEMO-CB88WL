@@ -106,6 +106,8 @@ body{
   color:#fff;
   text-align:center;
 
+  white-space: nowrap; /* biar angka ga turun */
+
   text-shadow:
     0 0 5px #00eaff,
     0 0 10px #00eaff,
@@ -131,16 +133,53 @@ body{
 }
 
 .game{
-  background:rgba(0,0,0,0.85);
+  background:rgba(0,0,0,0.9);
   border-radius:14px;
   padding:8px;
   text-align:center;
+  position:relative;
+  overflow:hidden;
+
+  box-shadow:
+    0 0 5px #00eaff,
+    0 0 10px #00eaff,
+    0 0 20px #00c3ff;
+
+  animation:glowPulse 2.5s infinite;
+}
+
+/* 🔥 ANIMASI */
+@keyframes glowPulse{
+  0%{
+    box-shadow:0 0 5px #00eaff,0 0 10px #00eaff;
+  }
+  50%{
+    box-shadow:0 0 20px #00eaff,0 0 40px #00c3ff;
+  }
+  100%{
+    box-shadow:0 0 5px #00eaff,0 0 10px #00eaff;
+  }
+}
+
+/* 🔥 HOVER */
+.game:hover{
+  transform:translateY(-10px) scale(1.08);
+  box-shadow:
+    0 0 20px #00eaff,
+    0 0 40px #00eaff,
+    0 0 80px #00c3ff;
+}
+
+/* 🔥 GAMBAR */
+.game img{
+  width:100%;
+  border-radius:10px;
   transition:0.3s;
 }
 
-.game:hover{
-  transform:translateY(-6px) scale(1.03);
-  box-shadow:0 0 15px #00eaff,0 0 30px #00eaff;
+.game:hover img{
+  transform:scale(1.05);
+  filter:brightness(1.2) drop-shadow(0 0 10px #00eaff);
 }
 
 .game img{
@@ -171,7 +210,7 @@ body{
 @media(max-width:480px){
   .topbar{flex-direction:column;gap:8px;}
   .game-list{grid-template-columns:repeat(2,1fr);}
-  .jackpot-number{left:50%;}
+  .jackpot-number{left:59%;}
 }
 
 /* TABLET */
@@ -236,7 +275,9 @@ body{
 <!-- MOBILE MENU -->
 <div class="mobile-menu">
   <div class="menu-item">🔥<span>Hot</span></div>
-  <div class="menu-item">🎰<span>Slot</span></div>
+<div class="menu-item">
+  <img src="https://cb88fulljpterus.com/asset/gameprovider/logo/pragmaticplay.png">
+</div>
   <div class="menu-item">🏀<span>Sport</span></div>
   <div class="menu-item">🎲<span>Casino</span></div>
   <div class="menu-item">🐟<span>Fishing</span></div>
