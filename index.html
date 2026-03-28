@@ -62,9 +62,10 @@ body{
 
 @media(max-width:480px){
   .mobile-menu{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
     padding:10px;
   }
 
@@ -105,8 +106,7 @@ body{
   font-weight:bold;
   color:#fff;
   text-align:center;
-
-  white-space: nowrap; /* biar angka ga turun */
+  white-space: nowrap;
 
   text-shadow:
     0 0 5px #00eaff,
@@ -148,38 +148,14 @@ body{
   animation:glowPulse 2.5s infinite;
 }
 
-/* 🔥 ANIMASI */
 @keyframes glowPulse{
-  0%{
-    box-shadow:0 0 5px #00eaff,0 0 10px #00eaff;
-  }
-  50%{
-    box-shadow:0 0 20px #00eaff,0 0 40px #00c3ff;
-  }
-  100%{
-    box-shadow:0 0 5px #00eaff,0 0 10px #00eaff;
-  }
+  0%{box-shadow:0 0 5px #00eaff,0 0 10px #00eaff;}
+  50%{box-shadow:0 0 20px #00eaff,0 0 40px #00c3ff;}
+  100%{box-shadow:0 0 5px #00eaff,0 0 10px #00eaff;}
 }
 
-/* 🔥 HOVER */
 .game:hover{
   transform:translateY(-10px) scale(1.08);
-  box-shadow:
-    0 0 20px #00eaff,
-    0 0 40px #00eaff,
-    0 0 80px #00c3ff;
-}
-
-/* 🔥 GAMBAR */
-.game img{
-  width:100%;
-  border-radius:10px;
-  transition:0.3s;
-}
-
-.game:hover img{
-  transform:scale(1.05);
-  filter:brightness(1.2) drop-shadow(0 0 10px #00eaff);
 }
 
 .game img{
@@ -191,7 +167,6 @@ body{
   color:#fff;
   font-size:12px;
   margin:6px 0;
-  min-height:32px;
 }
 
 .play-btn{
@@ -201,9 +176,7 @@ body{
   padding:10px;
   width:100%;
   border-radius:8px;
-  cursor:pointer;
   font-weight:bold;
-  font-size:13px;
 }
 
 /* MOBILE */
@@ -213,49 +186,8 @@ body{
   .jackpot-number{left:59%;}
 }
 
-/* TABLET */
-@media(min-width:768px){
-  .game-list{grid-template-columns:repeat(3,1fr);}
-}
-
-/* DESKTOP */
-@media(min-width:1024px){
-  .game-list{grid-template-columns:repeat(6,1fr);}
-}
-
 /* BOTTOM NAV */
 .bottom-nav{display:none;}
-
-@media(max-width:480px){
-  .bottom-nav{
-    position:fixed;
-    bottom:0;
-    left:0;
-    width:100%;
-    background:#000;
-    display:flex;
-    justify-content:space-around;
-    padding:8px 0;
-    z-index:999;
-  }
-
-  .bottom-nav div{
-    color:#fff;
-    font-size:11px;
-    text-align:center;
-  }
-
-  .center-btn{
-    background:gold;
-    color:#000 !important;
-    padding:10px;
-    border-radius:50%;
-    transform:translateY(-15px);
-    font-size:18px !important;
-  }
-
-  body{padding-bottom:70px;}
-}
 </style>
 </head>
 
@@ -274,14 +206,12 @@ body{
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu">
-  <div class="menu-item">🔥<span>Hot</span></div>
-<div class="menu-item">
-  <img src="https://cb88fulljpterus.com/asset/gameprovider/logo/pragmaticplay.png">
-</div>
-  <div class="menu-item">🏀<span>Sport</span></div>
-  <div class="menu-item">🎲<span>Casino</span></div>
-  <div class="menu-item">🐟<span>Fishing</span></div>
-  <div class="menu-item">🎮<span>Game</span></div>
+  <div class="menu-item" onclick="comingSoon()">
+    <img src="https://cb88fulljpterus.com/asset/gameprovider/logo/pgsoft.png">
+  </div>
+  <div class="menu-item">
+    <img src="https://cb88fulljpterus.com/asset/gameprovider/logo/pragmaticplay.png">
+  </div>
 </div>
 
 <div class="banner">
@@ -293,7 +223,6 @@ body{
   <div class="jackpot-number" id="jackpot">6,096,530,572</div>
 </div>
 
-<<!-- BAGIAN INI SAMA, GA DIUBAH -->
 <div class="game-list">
 
   <div class="game"><img src="https://i.postimg.cc/vZ26qrvR/vswaysmahwblck.webp"><div class="game-title">Mahjong Wins 3</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/mahjong-wins-3')">Coba Main Demo</button></div>
@@ -318,16 +247,14 @@ body{
 
   <div class="game"><img src="https://i.postimg.cc/dVBH0y54/vs20procount.webp"><div class="game-title">Wisdom of Athena</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/wisdon-of-athena')">Coba Main Demo</button></div>
 
-  <div class="game"><img src="https://i.postimg.cc/y8Z647n8/vs20sugarrushx(1).webp"><div class="game-title">5 Lions Megaways</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/sugar-rush-1000')">Coba Main Demo</button></div>
+  <div class="game"><img src="https://i.postimg.cc/y8Z647n8/vs20sugarrushx(1).webp"><div class="game-title">Sugar Rush 1000</div><button class="play-btn" onclick="go('https://simulasikan.cfd/pragmatic-play/sugar-rush-1000')">Coba Main Demo</button></div>
 
 </div>
-<!-- BOTTOM NAV -->
-<div class="bottom-nav">
-  <div>🏠<span>Home</span></div>
-  <div>💰<span>Deposit</span></div>
-  <div class="center-btn">🎰</div>
-  <div>🎁<span>Promo</span></div>
-  <div>💬<span>Chat</span></div>
+<!-- POPUP -->
+<div id="popup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;z-index:9999;">
+  <div style="background:#0a1f44;color:#fff;padding:25px;border-radius:12px;font-size:18px;text-align:center;box-shadow:0 0 20px #00eaff;">
+    🚧 GAMES AKAN SEGERA HADIR 🔥
+  </div>
 </div>
 
 <script>
@@ -335,24 +262,14 @@ function go(url){
   window.open(url,"_blank");
 }
 
-let banners=[
-"https://king.cb88-rtpslot.com/banner/banner1.webp",
-"https://king.cb88-rtpslot.com/banner/banner2.webp",
-"https://king.cb88-rtpslot.com/banner/banner3.webp"
-];
+function comingSoon(){
+  let popup = document.getElementById("popup");
+  popup.style.display = "flex";
 
-let i=0;
-setInterval(()=>{
-  i=(i+1)%banners.length;
-  document.getElementById("slider").src=banners[i];
-},3000);
-
-let el=document.getElementById("jackpot");
-setInterval(()=>{
-  let val=parseInt(el.innerText.replace(/,/g,''));
-  val+=Math.floor(Math.random()*2000);
-  el.innerText=val.toLocaleString();
-},1500);
+  setTimeout(()=>{
+    popup.style.display = "none";
+  },2000);
+}
 </script>
 
 </body>
