@@ -382,7 +382,6 @@ body{
 function go(url){
   window.location.href = url;
 }
-</script>
 
 function comingSoon(){
   let popup = document.getElementById("popup");
@@ -392,7 +391,18 @@ function comingSoon(){
     popup.style.display = "none";
   },2000);
 }
-</script>
 
-</body>
-</html>
+// jackpot jalan
+let jackpot = document.getElementById("jackpot");
+
+function formatNumber(num){
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+let current = 6096530572;
+
+setInterval(() => {
+  current += Math.floor(Math.random() * 1000);
+  jackpot.innerText = formatNumber(current);
+}, 100);
+</script>
