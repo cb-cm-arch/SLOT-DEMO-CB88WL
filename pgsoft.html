@@ -1,16 +1,134 @@
-<!-- PROVIDER MENU -->
-<div class="provider-menu">
-  
-  <!-- PGSOFT -->
-  <div class="provider-item">
-    <a href="pgsoft.html">
-      <img src="https://cb88fulljpterus.com/asset/gameprovider/logo/pgsoft.png">
-    </a>
-  </div>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PGSOFT DEMO</title>
 
-  <!-- PRAGMATIC -->
-  <div class="provider-item">
-    <img src="https://cb88fulljpterus.com/asset/gameprovider/logo/pragmaticplay.png">
-  </div>
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#000;
+}
+
+.provider-menu{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  padding:12px;
+}
+
+.provider-item{
+  background:#0a2a66;
+  padding:12px 18px;
+  border-radius:12px;
+  cursor:pointer;
+}
+
+.provider-item img{height:35px;}
+
+.game-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
+  gap:12px;
+  padding:10px;
+}
+
+.game{
+  background:#111;
+  border-radius:12px;
+  padding:8px;
+  text-align:center;
+}
+
+.game img{width:100%;border-radius:10px;}
+
+.game-title{color:#fff;font-size:12px;margin:5px 0;}
+
+.play-btn{
+  background:#00c3ff;
+  border:none;
+  padding:8px;
+  width:100%;
+  border-radius:8px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="provider-menu">
+
+<div class="provider-item">
+<img src="https://cb88fulljpterus.com/asset/gameprovider/logo/pgsoft.png">
+</div>
+
+<div class="provider-item">
+<a href="index.html">
+<img src="https://cb88fulljpterus.com/asset/gameprovider/logo/pragmaticplay.png">
+</a>
+</div>
 
 </div>
+
+<div class="game-list">
+
+<div class="game">
+<img src="https://static.pgf-asgard.com/game_pic/sq/64/1.png">
+<div class="game-title">Fortune Mouse</div>
+<button class="play-btn" onclick="go('https://pgdemo1.com/fortune-mouse')">Main</button>
+</div>
+
+<div class="game">
+<img src="https://static.pgf-asgard.com/game_pic/sq/64/2.png">
+<div class="game-title">Lucky Neko</div>
+<button class="play-btn" onclick="go('https://pgdemo1.com/lucky-neko')">Main</button>
+</div>
+
+<div class="game">
+<img src="https://static.pgf-asgard.com/game_pic/sq/64/3.png">
+<div class="game-title">Mahjong Ways</div>
+<button class="play-btn" onclick="go('https://pgdemo1.com/mahjong-ways')">Main</button>
+</div>
+
+<div class="game">
+<img src="https://static.pgf-asgard.com/game_pic/sq/64/6.png">
+<div class="game-title">Ganesha Fortune</div>
+<button class="play-btn" onclick="go('https://pgdemo1.com/ganesha-fortune')">Main</button>
+</div>
+
+<div class="game">
+<img src="https://static.pgf-asgard.com/game_pic/sq/64/9.png">
+<div class="game-title">Mahjong Ways 2</div>
+<button class="play-btn" onclick="go('https://pgdemo1.com/mahjong-ways-2')">Main</button>
+</div>
+
+<div class="game">
+<img src="https://static.pgf-asgard.com/game_pic/sq/64/11.png">
+<div class="game-title">Candy Bonanza</div>
+<button class="play-btn" onclick="go('https://pgdemo1.com/candy-bonanza')">Main</button>
+</div>
+
+<div class="game">
+<img src="https://static.pgf-asgard.com/game_pic/sq/64/14.png">
+<div class="game-title">Dragon Hatch</div>
+<button class="play-btn" onclick="go('https://pgdemo1.com/dragon-hatch')">Main</button>
+</div>
+
+<div class="game">
+<img src="https://static.pgf-asgard.com/game_pic/sq/64/16.png">
+<div class="game-title">Rise of Apollo</div>
+<button class="play-btn" onclick="go('https://pgdemo1.com/rise-of-apollo')">Main</button>
+</div>
+
+</div>
+
+<script>
+function go(url){
+  window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
