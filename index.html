@@ -22,8 +22,8 @@ body{
   align-items:center;
   padding:10px 15px;
 
-  background:url('https://i.postimg.cc/13xhZS2v/photo-2026-03-31-01-08-32.jpg') no-repeat center center;
-  background-size:cover;
+  background:url('https://i.postimg.cc/13xhZS2v/photo-2026-03-31-01-08-32.jpg') no-repeat center top;
+  background-size: cover;
 
   flex-wrap:wrap;
   position:sticky;
@@ -241,9 +241,23 @@ body{
 
 /* MOBILE */
 @media(max-width:480px){
-  .topbar{flex-direction:column;gap:8px;}
-  .game-list{grid-template-columns:repeat(2,1fr);}
-  .jackpot-number{left:59%;}
+  .topbar{
+    flex-direction:column;
+    gap:8px;
+
+    /* TAMBAHAN INI */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color:#000;
+  }
+
+  .game-list{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .jackpot-number{
+    left:59%;
+  }
 }
 
 /* POPUP */
