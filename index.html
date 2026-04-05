@@ -378,6 +378,38 @@ body{
     transform:translateY(0);
   }
 }  
+  /* FOOTER FULL BIRU GLOW */
+.footer-desktop{
+  width:100%;
+  text-align:center;
+  color:#fff;
+  font-size:14px;
+  padding:10px 0;
+
+  background:linear-gradient(
+    90deg,
+    #000428,
+    #004e92,
+    #000428
+  );
+
+  box-shadow:
+    0 0 20px #003cff,
+    inset 0 0 10px #001a66;
+
+  position:relative;
+  margin-top:20px;
+}
+  /* HANYA DESKTOP */
+.footer-desktop{
+  display:none;
+}
+
+@media(min-width:769px){
+  .footer-desktop{
+    display:block;
+  }
+}
 </style>
 </head>
 
@@ -651,7 +683,14 @@ body{
 <div class="game-title">Wild Fireworks</div>
 <button class="play-btn" onclick="go('https://pgdemo1.com/wild-fireworks')">Coba Main Demo</button>
 </div>
+</div> <!-- END PGSOFT -->
 
+<!-- TARUH DI SINI -->
+<div class="footer-desktop">
+  ©2026 CLICKBET88. All rights reserved.
+</div>
+
+</body>
 <script>
 function go(url){
   window.open(url, "_blank");
