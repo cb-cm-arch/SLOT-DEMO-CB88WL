@@ -315,7 +315,69 @@ body{
     0 0 25px #00c3ff,
     inset 0 0 10px rgba(0,200,255,0.5);
 } 
-  
+/* EFEK LUAR SAJA */
+.btn-login,
+.btn-daftar{
+  position:relative;
+  overflow:hidden;
+}
+
+/* BORDER OMBAK */
+.btn-login::after,
+.btn-daftar::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  padding:2px;
+  border-radius:30px;
+
+  background:linear-gradient(
+    90deg,
+    transparent 0%,
+    #00eaff 30%,
+    #0099ff 50%,
+    #00eaff 70%,
+    transparent 100%
+  );
+
+  background-size:200% 100%;
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+
+  opacity:0;
+}
+
+/* AKTIF SAAT HOVER */
+.btn-login:hover::after,
+.btn-daftar:hover::after{
+  opacity:1;
+  animation:ombakLuar 1s linear infinite;
+}
+
+/* ANIMASI */
+@keyframes ombakLuar{
+  0%{
+    background-position:200% 0;
+    transform:translateY(0);
+  }
+  25%{
+    transform:translateY(-2px);
+  }
+  50%{
+    transform:translateY(2px);
+  }
+  75%{
+    transform:translateY(-1px);
+  }
+  100%{
+    background-position:-200% 0;
+    transform:translateY(0);
+  }
+}  
 </style>
 </head>
 
