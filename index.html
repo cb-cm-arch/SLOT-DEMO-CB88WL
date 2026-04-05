@@ -283,6 +283,39 @@ body{
   text-align:center;
   box-shadow:0 0 20px #00eaff;
 }
+ /* === BUTTON BASE === */
+.btn-login, .btn-daftar{
+  position:relative;
+  padding:8px 22px;
+  border-radius:30px;
+  font-weight:bold;
+  color:#fff;
+  background:#0b2f5f;
+  border:2px solid #00eaff;
+  text-align:center;
+  display:inline-block;
+  overflow:hidden;
+}
+
+/* EFEK PETIR PNG */
+.btn-login::before,
+.btn-daftar::before{
+  content:"";
+  position:absolute;
+  inset:-12px;
+  background:url('https://cb88autojpterus03.com/storage/webpersonalize/d5982f2c-2832-43af-b3f4-c662890c5709.gif') center/cover no-repeat;
+  opacity:0.9;
+  z-index:-1;
+}
+
+/* GLOW */
+.btn-login, .btn-daftar{
+  box-shadow:
+    0 0 10px #00eaff,
+    0 0 25px #00c3ff,
+    inset 0 0 10px rgba(0,200,255,0.5);
+} 
+  
 </style>
 </head>
 
