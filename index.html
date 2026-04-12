@@ -520,6 +520,87 @@ body{
     bottom:120px;
   }
 }
+  .faq-item{
+  margin-bottom:12px;
+}
+
+.faq-title{
+  background:rgba(0,50,100,0.8);
+  color:#fff;
+  padding:14px;
+  border-radius:10px;
+  font-weight:bold;
+  cursor:pointer;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  box-shadow:0 0 10px rgba(0,195,255,0.5);
+}
+
+/* PANAH */
+.faq-title::after{
+  content:"▼";
+  font-size:12px;
+}
+
+.faq-title.active::after{
+  content:"▲";
+}
+
+.faq-content{
+  display:none; /* INI PENTING */
+  padding:15px;
+  background:#0a1f44;
+  border-radius:10px;
+  margin-top:5px;
+}
+  .faq-content img{
+  width:100%;       /* BIAR IKUT LEBAR CONTAINER */
+  max-width:100%;   /* TIDAK BOLEH LEBIH */
+  height:auto;
+  border-radius:10px;
+}
+  body{
+  overflow-x:hidden;
+}
+  #panduan .faq-content{
+  display:none;
+  padding:18px;
+
+  background:rgba(5,25,55,0.95); /* lebih gelap biar kontras */
+  border-radius:12px;
+  margin-top:8px;
+
+  font-size:14px;
+  line-height:1.8;
+  color:#ffffff;
+
+  box-shadow:
+    0 0 8px rgba(0,195,255,0.4),
+    inset 0 0 8px rgba(0,195,255,0.2);
+
+  text-shadow:0 0 2px rgba(0,200,255,0.5);
+}
+#panduan .title-center{
+  text-align:center;
+  font-weight:bold;
+  font-size:15px;
+  color:#ffffff; /* PUTIH */
+
+  margin:15px 0 10px;
+
+  text-shadow:
+    0 0 3px rgba(255,255,255,0.5); /* glow halus */
+}
+  #panduan .faq-content br{
+  display:block;
+  margin-bottom:6px;
+}
+  #panduan .faq-content{
+  border:1px solid rgba(0,200,255,0.3);
+}
 </style>
 </head>
 
@@ -545,15 +626,212 @@ body{
   <div class="jackpot-number" id="jackpot">6,096,530,572</div>
 </div>
 <div class="provider-menu">
-<div class="provider-item" onclick="showPG()">
+
+  <div class="provider-item" onclick="showPG()">
     <img src="https://jadijuragandiclickbet88-04.xyz/asset/gameprovider/logo/pgsoft.png">
   </div>
 
   <div class="provider-item" onclick="showPragmatic()">
-  <img src="https://jadijuragandiclickbet88-04.xyz/asset/gameprovider/logo/pragmaticplay.png">
+    <img src="https://jadijuragandiclickbet88-04.xyz/asset/gameprovider/logo/pragmaticplay.png">
+  </div>
+
+  <!-- TAMBAHAN KAMU -->
+  <div class="provider-item" onclick="panduanclickbet88()">
+    <img src="https://i.postimg.cc/wBR9NfBf/gambar-removebg-preview(4).png">
+  </div>
+
 </div>
+<div id="panduan" style="display:none; padding:20px;">
+
+ <!-- DEPOSIT -->
+<div class="faq-item">
+<div class="faq-title" onclick="toggleFaq(this)">
+  Cara Deposit
 </div>
-  
+  <div class="faq-content">
+
+    Kakak klik ikon garis tiga (☰) di pojok kanan atas aplikasi ya.<br>
+    Lalu pilih menu Deposit.<br>
+    Pilih metode pembayaran yang tersedia<br>
+    Masukkan nominal sesuai Deposit kakak<br>
+    Upload bukti transfer jika diperlukan<br>
+    Klik Deposit untuk melanjutkan<br>
+    Selesai, silakan tunggu prosesnya ya kakak 🙏<br><br>
+
+    <div class="title-center">DEPOSIT QRIS</div>
+    <div class="hp-frame">
+      <img src="https://i.postimg.cc/htLZhDLT/photo-2026-03-31-02-30-12.jpg">
+    </div>
+
+    <div class="title-center">DEPOSIT BANK</div>
+    <div class="hp-frame">
+      <img src="https://i.postimg.cc/PqK6zSFt/photo-2026-03-31-02-30-47.jpg">
+    </div>
+
+    <div class="title-center">HALAMAN DEPOSIT</div>
+    <div class="hp-frame">
+      <img src="https://i.postimg.cc/Y2JwWSWQ/photo-2026-03-31-02-36-21.jpg">
+    </div>
+
+  </div>
+</div>
+
+<!-- WITHDRAW -->
+<div class="faq-item">
+<div class="faq-title" onclick="toggleFaq(this)">
+  Cara Withdraw
+</div>
+  <div class="faq-content">
+
+    Kakak klik ikon garis tiga (☰) di pojok kanan atas aplikasi ya.<br>
+    Lalu pilih menu Withdraw.<br><br>
+
+    Jika ingin Withdraw ke Rekening BANK, silakan pilih metode BANK.<br>
+    Jika ingin Withdraw ke DANA / E-Wallet lainnya, silakan pilih E-Wallet.<br><br>
+
+    Masukkan nominal penarikan sesuai keinginan kakak<br>
+    Pastikan data rekening sudah benar<br>
+    Klik Withdraw untuk melanjutkan<br>
+    Selesai, silakan tunggu proses dari sistem ya kakak 🙏✨<br><br>
+
+    <div class="title-center">WITHDRAW BANK</div>
+    <div class="hp-frame">
+      <img src="https://i.postimg.cc/SNt7Yf06/photo-2026-04-01-10-08-42.jpg">
+    </div>
+
+    <div class="title-center">WITHDRAW E-WALLET</div>
+    <div class="hp-frame">
+      <img src="https://i.postimg.cc/LXTj9zB6/photo-2026-04-01-10-07-27.jpg">
+    </div>
+
+  </div>
+</div>
+<!-- TAMBAH REKENING -->
+<div class="faq-item">
+<div class="faq-title" onclick="toggleFaq(this)">
+  Cara Tambah Rekening
+</div>
+  <div class="faq-content">
+
+    Kakak klik ikon garis tiga (☰) di pojok kanan atas aplikasi ya.<br>
+    Lalu pilih menu <b>Rekening Bank</b> / <b>Pengaturan Akun</b>.<br><br>
+
+    Setelah itu, kakak klik tombol <b>Tambah Rekening</b>.<br>
+    Silakan isi data rekening dengan benar ya kakak:<br>
+    - Nama Pemilik Rekening<br>
+    - Nomor Rekening<br>
+    - Nama Bank / E-Wallet<br><br>
+
+    Pastikan semua data sudah sesuai dengan rekening kakak ya 🙏<br>
+    Jika sudah, klik <b>Simpan</b> untuk melanjutkan.<br><br>
+
+    Selesai, rekening berhasil ditambahkan dan bisa digunakan untuk Deposit & Withdraw ✨<br><br>
+
+    <div class="title-center">HALAMAN TAMBAH REKENING</div>
+    <div class="hp-frame">
+      <img src="https://i.postimg.cc/SRc6BwT5/photo-2026-04-01-12-30-22.jpg" 
+      onerror="this.src='https://via.placeholder.com/400x600?text=Gambar+Tidak+Tersedia'">
+    </div>
+
+    <div class="title-center">FORM ISI DATA REKENING</div>
+    <div class="hp-frame">
+      <img src="https://i.postimg.cc/vmDWY127/photo-2026-04-01-12-32-13.jpg" 
+      onerror="this.src='https://via.placeholder.com/400x600?text=Gambar+Tidak+Tersedia'">
+    </div>
+
+  </div>
+</div>
+<!-- CARA DAFTAR -->
+<div class="faq-item">
+<div class="faq-title" onclick="toggleFaq(this)">
+  Cara Daftar
+</div>
+  <div class="faq-content">
+
+    Kakak bisa klik tombol <b>DAFTAR</b> di bagian atas halaman ya.<br>
+    Setelah itu, kakak akan diarahkan ke halaman pendaftaran akun.<br><br>
+
+    Silakan isi data yang diminta dengan lengkap dan benar ya kakak:<br>
+    - Username<br>
+    - Password<br>
+    - Nomor HP aktif<br>
+    - Rekening / E-Wallet<br><br>
+
+    Pastikan semua data yang diisi sudah sesuai dan valid ya kakak 🙏<br>
+    Jika sudah, klik tombol <b>Daftar</b> untuk melanjutkan.<br><br>
+
+    Setelah berhasil daftar, kakak bisa langsung login dan melakukan Deposit untuk mulai bermain 🎮✨<br><br>
+
+    <div class="title-center">HALAMAN FORM DAFTAR</div>
+    <div class="hp-frame">
+      <img src="https://i.postimg.cc/T1ZbCGVY/photo-2026-04-01-14-15-24-(3).jpg" 
+      onerror="this.src='https://via.placeholder.com/400x600?text=Gambar+Tidak+Tersedia'">
+    </div>
+
+    <div class="title-center">ISI DATA AKUN</div>
+    <div class="hp-frame">
+      <img src="https://i.postimg.cc/vmQVP0V9/photo-2026-04-01-14-15-24-(2).jpg" 
+      onerror="this.src='https://via.placeholder.com/400x600?text=Gambar+Tidak+Tersedia'">
+    </div>
+
+    <div class="title-center">KONFIRMASI PENDAFTARAN</div>
+    <div class="hp-frame">
+      <img src="https://i.postimg.cc/50rQ21k6/photo-2026-04-01-14-15-24.jpg" 
+      onerror="this.src='https://via.placeholder.com/400x600?text=Gambar+Tidak+Tersedia'">
+    </div>
+
+  </div>
+</div>
+<!-- CARA CLAIM BONUS -->
+<div class="faq-item">
+ <div class="faq-title" onclick="toggleFaq(this)">
+  Cara Claim Bonus CLICKBET88
+</div>
+  <div class="faq-content">
+
+    Untuk claim bonus, kakak wajib konfirmasi ke CS terlebih dahulu ya 😊<br><br>
+
+    Kakak bisa konfirmasi melalui WhatsApp, Telegram ataupun Livechat ya kakak 🙏<br><br>
+
+    Perlu diingat kakak 🙏<br>
+    Kredit tidak boleh dimainkan sebelum bonus kami berikan.<br><br>
+
+    Setelah bonus masuk, kakak baru bisa bermain seperti biasa ✨<br><br>
+
+    <div class="title-center">PILIH CS UNTUK CLAIM BONUS</div>
+
+    <div style="
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:25px;
+      flex-wrap:wrap;
+      margin-top:15px;
+    ">
+
+      <!-- WHATSAPP -->
+      <a href="https://click-lynk.com/WHATSAPP_OFFICIAL_CLICKBET88WL" target="_blank">
+        <img src="https://cliply.co/wp-content/uploads/2021/08/372108180_WHATSAPP_ICON_400.gif"
+        style="width:90px;">
+      </a>
+
+      <!-- TELEGRAM -->
+      <a href="https://click-lynk.com/TELEGRAM_OFFCIAL_CLICKBET88WL" target="_blank">
+        <img src="https://assets-v2.lottiefiles.com/a/756d2a6a-deaa-11ee-b936-e7f4912709a6/azKF8ReuZe.gif"
+        style="width:90px;">
+      </a>
+
+      <!-- LIVECHAT -->
+      <a href="https://direct.lc.chat/12319896" target="_blank">
+        <img src="https://media.tenor.com/S65c088OseQAAAAj/livechat.gif"
+        style="width:90px;">
+      </a>
+
+    </div>
+ </div>
+</div>
+  </div>
+</div>
 <div class="game-list" id="pragmatic">
 
 <div class="game">
@@ -852,5 +1130,21 @@ setInterval(() => {
 }, 100);
 function toggleCS(){
   document.getElementById("csMenu").classList.toggle("active");
+}
+  function panduanclickbet88(){
+  document.getElementById("pragmatic").style.display = "none";
+  document.getElementById("pgsoft").style.display = "none";
+  document.getElementById("panduan").style.display = "block";
+}
+  function toggleFaq(el){
+  el.classList.toggle("active");
+
+  let content = el.nextElementSibling;
+
+  if(content.style.display === "block"){
+    content.style.display = "none";
+  } else {
+    content.style.display = "block";
+  }
 }
 </script>
