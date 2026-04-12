@@ -601,6 +601,9 @@ body{
   #panduan .faq-content{
   border:1px solid rgba(0,200,255,0.3);
 }
+  .provider-menu{
+  transition:0.3s;
+}
 </style>
 </head>
 
@@ -1108,11 +1111,17 @@ function go(url){
 function showPG(){
   document.getElementById("pragmatic").style.display = "none";
   document.getElementById("pgsoft").style.display = "grid";
+  document.getElementById("panduan").style.display = "none";
+
+  document.querySelector(".provider-menu").style.display = "flex"; // BALIKIN
 }
 
 function showPragmatic(){
   document.getElementById("pragmatic").style.display = "grid";
   document.getElementById("pgsoft").style.display = "none";
+  document.getElementById("panduan").style.display = "none";
+
+  document.querySelector(".provider-menu").style.display = "flex";
 }
 
 // jackpot jalan
@@ -1131,7 +1140,7 @@ setInterval(() => {
 function toggleCS(){
   document.getElementById("csMenu").classList.toggle("active");
 }
-  function panduanclickbet88(){
+ function panduanclickbet88(){
   document.getElementById("pragmatic").style.display = "none";
   document.getElementById("pgsoft").style.display = "none";
   document.getElementById("panduan").style.display = "block";
