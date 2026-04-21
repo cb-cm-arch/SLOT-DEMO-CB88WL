@@ -120,13 +120,15 @@ body{
 
 /* GAME GRID */
 .game-list{
-  max-width:1000px;   /* dipersempit dikit → pinggir makin lega */
-  margin:30px auto;   /* jarak atas bawah lebih jauh */
-  padding:25px;       /* kiri kanan makin lega */
+  width:100%;
+  max-width:1200px;   /* batas maksimal desktop */
+  margin:30px auto;
+
+  padding:20px;
 
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
-  gap:22px;           /* jarak antar game lebih renggang */
+  grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+  gap:20px;
 }
 
 /* ===== GAME ULTRA EFFECT ===== */
@@ -417,8 +419,11 @@ body{
   /* WRAPPER */
 .cs-wrapper{
   position:fixed;
-  left:10px;
-  bottom:90px;
+
+  left:15px;
+
+  bottom:40px;   /* 🔥 TURUNKAN KE BAWAH */
+
   z-index:9999;
 }
 
@@ -517,7 +522,7 @@ body{
   @media(min-width:769px){
   .cs-wrapper{
     left:20px;
-    bottom:120px;
+    bottom:50px !important;   /* 🔥 TURUNKAN KE BAWAH */
   }
 }
   .faq-item{
@@ -619,11 +624,12 @@ body{
   max-width:120px;
   text-align:center;
 }
- .game-list{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); /* DESKTOP NORMAL */
-  gap:22px;
-  padding:25px;
+@media(min-width:769px){
+  .game-list{
+    grid-template-columns:repeat(5, 1fr); /* 🔥 FIX 5 kolom */
+    max-width:1000px;
+    margin:30px auto;
+  }
 }
   img{
   max-width:100%;
@@ -659,7 +665,70 @@ body{
     0 0 6px #ff0000,
     0 0 12px #ff0000;
 }
-  margin:5px 0 10px;
+/* ❌ default: sembunyi dulu */
+.livechat-kanan{
+  display:none;
+}
+
+/* ✅ hanya muncul di desktop */
+@media(min-width:769px){
+  .livechat-kanan{
+    display:block;
+
+    position:fixed !important;
+
+    right:15px;
+    bottom:80px;   /* 🔥 KUNCI DARI BAWAH */
+
+    left:auto;
+    top:auto;
+
+    z-index:999999;
+
+    width:180px;
+
+    transition:0.3s;
+  }
+}
+  @media(min-width:769px){
+  .cs-wrapper{
+    left:20px;
+    bottom:80px !important;  /* 🔥 sama kayak kanan */
+  }
+}
+  html, body{
+  height:100%;
+  margin:0;
+}
+
+/* WRAPPER UTAMA */
+.main-wrapper{
+  min-height:100vh;             /* 🔥 tinggi minimal 1 layar */
+  display:flex;
+  flex-direction:column;
+}
+
+/* ISI KONTEN */
+.content{
+  flex:1;                       /* dorong footer ke bawah */
+}
+
+/* FOOTER */
+.footer{
+  margin-top:auto;              /* 🔥 kunci di bawah */
+}
+  .footer-desktop{
+  margin-top:auto;   /* 🔥 biar nempel bawah */
+}
+  body{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+  .footer-desktop{
+  margin-top:auto;   /* 🔥 dorong ke bawah */
+}
+  
   
 </style>
 </head>
@@ -1159,10 +1228,15 @@ body{
   </div>
 
 </div>
-<!-- TARUH DI SINI -->
-<div class="footer-desktop">
-  ©2026 CLICKBET88. All rights reserved.
-</div>
+  <!-- LIVECHAT KANAN DESKTOP -->
+<!-- GIF LIVECHAT KANAN -->
+<a href="https://direct.lc.chat/12319896" target="_blank" class="livechat-kanan">
+  <img src="https://cdn.files-text.com/us-south1/api/lc/main/12319896/0/ec/dc85ecafba48bd9326757ad0ebd19fa6.gif">
+</a>
+  <!-- FOOTER -->
+  <div class="footer-desktop">
+    ©2026 CLICKBET88. All rights reserved.
+  </div>
 
 </body>
 <script>
