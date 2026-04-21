@@ -459,6 +459,13 @@ body{
 
 /* MENU */
 .cs-menu{
+  opacity:0;
+  transform:scale(0.5) translateY(40px);
+  /* ❌ filter dihapus */
+}
+
+/* SAAT DIBUKA */
+.cs-menu{
   position:absolute;
   bottom:70px;
   left:0;
@@ -468,12 +475,92 @@ body{
   gap:12px;
 
   opacity:0;
-  transform:translateY(20px) scale(0.9);
+  transform:scale(0.5) translateY(40px);
+  transform-origin:bottom;
+
   pointer-events:none;
 
-  transition:0.35s;
+  transition:
+    transform 0.45s cubic-bezier(.34,1.56,.64,1),  /* 🔥 spring */
+    opacity 0.3s;
 }
 
+/* BUKA */
+.cs-menu.active{
+  opacity:1;
+  transform:scale(1) translateY(0);
+  pointer-events:auto;
+}.cs-menu a{
+  transform:scale(0.5);
+  opacity:0;
+}
+
+/* efek delay keluar satu-satu */
+.cs-menu.active a:nth-child(1){
+  animation:popUp 0.4s ease forwards;
+  animation-delay:0.1s;
+}
+
+.cs-menu.active a:nth-child(2){
+  animation:popUp 0.4s ease forwards;
+  animation-delay:0.2s;
+}
+
+.cs-menu.active a:nth-child(3){
+  animation:popUp 0.4s ease forwards;
+  animation-delay:0.3s;
+}
+
+/* ANIMASI */
+@keyframes popUp{
+  0%{
+    transform:scale(0.5);
+    opacity:0;
+  }
+  60%{
+    transform:scale(1.2); /* 🔥 sedikit bounce */
+  }
+  100%{
+    transform:scale(1);
+    opacity:1;
+  }
+}.cs-toggle{
+  transition:0.3s;
+}
+
+.cs-toggle.active{
+  transform:rotate(90deg) scale(1.1);
+}
+
+.cs-menu.active a:nth-child(3){
+  transform:translateY(0) scale(1);
+  opacity:1;
+  transition:0.3s 0.3s;
+}.cs-menu a img{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+
+  box-shadow:
+    0 0 10px #00eaff,
+    0 0 25px #00c3ff;
+
+  transition:0.3s;
+}
+
+/* hover effect premium */
+.cs-menu a img:hover{
+  transform:scale(1.2) translateY(-3px);
+  box-shadow:
+    0 0 25px #00eaff,
+    0 0 60px #00c3ff;
+}.cs-toggle{
+  transition:0.3s;
+}
+
+.cs-toggle.active{
+  transform:scale(1.1);
+}
 /* AKTIF */
 .cs-menu.active{
   opacity:1;
@@ -952,7 +1039,7 @@ body{
 
       <!-- TELEGRAM -->
       <a href="https://click-lynk.com/TELEGRAM_OFFCIAL_CLICKBET88WL" target="_blank">
-        <img src="https://assets-v2.lottiefiles.com/a/756d2a6a-deaa-11ee-b936-e7f4912709a6/azKF8ReuZe.gif"
+        <img src="https://s13.gifyu.com/images/b2Tge.gif"
         style="width:90px;">
       </a>
 
@@ -1218,7 +1305,7 @@ body{
     </a>
 
     <a href="https://click-lynk.com/TELEGRAM_OFFCIAL_CLICKBET88WL" target="_blank">
-      <img src="https://assets-v2.lottiefiles.com/a/756d2a6a-deaa-11ee-b936-e7f4912709a6/azKF8ReuZe.gif">
+      <img src="https://patung288-bo.l88x.cfd/upload/tele.gif">
     </a>
 
     <a href="https://direct.lc.chat/12319896" target="_blank">
