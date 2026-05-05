@@ -510,20 +510,63 @@ body{
   animation:popUp 0.4s ease forwards;
   animation-delay:0.3s;
 }
+  .cs-menu.active a:nth-child(4){
+  animation:popUp 0.4s ease forwards;
+  animation-delay:0.4s;
+}
 
 /* ANIMASI */
 @keyframes popUp{
   0%{
-    transform:scale(0.5);
+    transform:translateY(50px) scale(0.6) rotate(-20deg);
     opacity:0;
+    filter:blur(6px);
   }
+
   60%{
-    transform:scale(1.2); /* 🔥 sedikit bounce */
+    transform:translateY(-8px) scale(1.1) rotate(5deg);
+    filter:blur(1px);
   }
+
   100%{
-    transform:scale(1);
+    transform:translateY(0) scale(1) rotate(0deg);
     opacity:1;
+    filter:blur(0);
   }
+}
+  .cs-menu.active a{
+  animation:
+    popUp 0.5s ease forwards,
+    floatIcon 3s ease-in-out infinite;
+}
+  @keyframes floatIcon{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-5px);}
+  100%{transform:translateY(0);}
+}
+
+  .cs-menu a{
+  position:relative;
+}
+
+.cs-menu a::after{
+  content:"";
+  position:absolute;
+  inset:-5px;
+  border-radius:50%;
+  background:radial-gradient(circle, #00eaff, transparent);
+  opacity:0;
+}
+
+.cs-menu.active a::after{
+  animation:flashGlow 0.6s ease;
+}
+
+@keyframes flashGlow{
+  0%{opacity:1; transform:scale(0.5);}
+  100%{opacity:0; transform:scale(1.5);}
+}
+  
 }.cs-toggle{
   transition:0.3s;
 }
@@ -570,15 +613,18 @@ body{
 
 /* ICON */
 .cs-menu a img{
-  width:50px;
-  height:50px;
+  width:55px;
+  height:55px;
   border-radius:50%;
+  position:relative;
+  z-index:2;
 
   box-shadow:
     0 0 10px #00eaff,
-    0 0 20px #00c3ff;
+    0 0 25px #00c3ff,
+    0 0 50px #0099ff;
 
-  transition:0.3s;
+  animation:csGlow 2s infinite alternate;
 }
 
 /* HOVER */
@@ -814,6 +860,14 @@ body{
 }
   .footer-desktop{
   margin-top:auto;   /* 🔥 dorong ke bawah */
+}
+  .cs-toggle{
+  transition: transform 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+/* SAAT AKTIF */
+.cs-toggle.active{
+  transform: rotate(180deg) scale(1.1);
 }
   
   
@@ -1311,7 +1365,9 @@ body{
     <a href="https://direct.lc.chat/12319896" target="_blank">
       <img src="https://media.tenor.com/S65c088OseQAAAAj/livechat.gif">
     </a>
-
+      <a href="https://click-lynk.com/CLICKBET88" target="_blank">
+  <img src="https://i.imgur.com/vD4P9cJ.gif">
+</a>    
   </div>
 
 </div>
@@ -1362,7 +1418,18 @@ setInterval(() => {
   jackpot.innerText = formatNumber(current);
 }, 100);
 function toggleCS(){
-  document.getElementById("csMenu").classList.toggle("active");
+  const menu = document.getElementById("csMenu");
+  const btn = document.querySelector(".cs-toggle");
+
+  menu.classList.toggle("active");
+  btn.classList.toggle("active");
+
+  // GANTI ICON
+  if(btn.classList.contains("active")){
+    btn.innerHTML = "✕"; // jadi X
+  } else {
+    btn.innerHTML = "☰"; // balik lagi
+  }
 }
  function panduanclickbet88(){
   document.getElementById("pragmatic").style.display = "none";
